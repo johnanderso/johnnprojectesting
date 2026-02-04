@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Test v1.2</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; text-align: center; padding: 50px; }
+        #survey, #transition { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 400px; margin: auto; }
+        .hidden { display: none; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        #surprise-section { background: #fff0f5; min-height: 100vh; padding: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="survey">
+        <h2>Layout Test v1.2</h2>
+        <p>User Analytics & System Check</p>
+        <hr>
+        <p>1. How are you feeling post-exams?</p>
+        <input type="text" style="width:80%" placeholder="System status...">
+
+        <p>2. Resumption Projection:</p>
+        <select style="padding: 5px;">
+            <option>Early (Model Student 🤓)</option>
+            <option>My own choice/timeline 💅</option>
+        </select>
+
+        <p>3. Rate the clarity of these prompts:</p>
+        <button onclick="startTransition()">1</button>
+        <button onclick="startTransition()">2</button>
+        <button onclick="startTransition()">3</button>
+        <button onclick="startTransition()">4</button>
+        <button onclick="startTransition()">5</button>
+    </div>
+
+    <div id="transition" class="hidden">
+        <h3 id="status-text">Submitting feedback...</h3>
+        <p id="glitch-text"></p>
+    </div>
+
+    <div id="surprise-section" class="hidden">
+        <h1>Favour, you're the best! ❤️</h1>
+        <p>Decoy mode deactivated. I have a question...</p>
+        <p><i>"No take-backs allowed! 😉"</i></p>
+        <h2>hehe🥲😁❤️</h2>
+        
+        <audio id="myAudio">
+            <source src="foreversweet.m4a" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        function startTransition() {
+            document.getElementById('survey').classList.add('hidden');
+            document.getElementById('transition').classList.remove('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('status-text').innerText = "System Error: 404";
+                document.getElementById('glitch-text').innerText = "Wait... switching to Heart-Mode... ❤️";
+            }, 1500);
+
+            setTimeout(() => {
+                document.getElementById('transition').classList.add('hidden');
+                document.getElementById('surprise-section').classList.remove('hidden');
+                let audio = document.getElementById('myAudio');
+                audio.play().catch(e => console.log("Audio needs a click to play!"));
+            }, 4000);
+        }
+    </script>
+</body>
+          </html>
+  
