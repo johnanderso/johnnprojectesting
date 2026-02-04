@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Test v1.2</title>
+    <style>
+        /* Keeping your original vibe */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fdfcfc; text-align: center; padding: 20px; }
+        .page { display: none; max-width: 400px; margin: 100px auto; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .active { display: block; }
+        button { background: #333; color: white; border: none; padding: 12px 25px; border-radius: 10px; cursor: pointer; margin-top: 20px; font-size: 16px; }
+        input { width: 90%; padding: 10px; margin-top: 10px; border: 1px solid #ddd; border-radius: 8px; }
+        h2 { color: #444; }
+        #final-surprise { background: #fff5f7; } /* Your original heart-vibe background */
+    </style>
+</head>
+<body>
+
+    <div id="p1" class="page active">
+        <h2>System Check: User Status</h2>
+        <p>1. How are you feeling post-exams? (Physical & Mental Status)</p>
+        <input type="text" id="q1" placeholder="Type here...">
+        <br>
+        <button onclick="next('p1', 'p2')">Next</button>
+    </div>
+
+    <div id="p2" class="page">
+        <h2>Academic Projection</h2>
+        <p>2. Will you be resuming school early (model student) or at your own choice?</p>
+        <input type="text" id="q2" placeholder="Early or My Choice?">
+        <br>
+        <button onclick="next('p2', 'p3')">Next</button>
+    </div>
+
+    <div id="p3" class="page">
+        <h2>UI Feedback</h2>
+        <p>3. Please rate the clarity of these layout blocks (1-5):</p>
+        <button onclick="triggerGlitch()">1</button>
+        <button onclick="triggerGlitch()">2</button>
+        <button onclick="triggerGlitch()">3</button>
+        <button onclick="triggerGlitch()">4</button>
+        <button onclick="triggerGlitch()">5</button>
+    </div>
+
+    <div id="glitch-page" class="page">
+        <h2 id="glitch-text">Submitting Data...</h2>
+        <p id="sub-text">Please wait.</p>
+    </div>
+
+    <div id="final-surprise" class="page">
+        <h1>Favour! ❤️</h1>
+        <p>Everything before this was a decoy.</p>
+        <p>You worked so hard on those exams, and I'm so proud of you.</p>
+        <p>I know we lost the old recordings, but my heart hasn't changed.</p>
+        <hr>
+        <h3>Wait—Really?!... No take-backs allowed! 😉</h3>
+        <h2>hehe🥲😁❤️</h2>
+        
+        <audio id="myAudio
+  
